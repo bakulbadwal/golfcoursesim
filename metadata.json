@@ -1,0 +1,8 @@
+{
+  "name": "Remix CourseViz - Explore Pebble Beach Hole 7",
+  "description": "CourseViz is an interactive golf course exploration and shot planning application featuring Birdwood Golf Course at UVA (Charlottesville, VA) and iconic championship layouts. Analyze hole architectures, visualize hazards and landing zones, and simulate realistic golf shot trajectories in 2D satellite and Photorealistic 3D Maps.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

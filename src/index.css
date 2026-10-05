@@ -1,0 +1,179 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    background-color: #FDFCF9;
+    color: #2C3327;
+  }
+
+  .font-serif-natural {
+    font-family: 'Fraunces', Georgia, serif;
+  }
+}
+
+/* Custom scrollbars with Natural Tones */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #EBE7DD;
+}
+::-webkit-scrollbar-thumb {
+  background: #C2B280;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #8FB062;
+}
+
+/* Cross-browser range slider input touch targets (WCAG 2.5.8 44x44px accessible touch zone) */
+input[type='range'] {
+  touch-action: pan-y;
+}
+input[type='range']::-webkit-slider-thumb {
+  width: 24px;
+  height: 24px;
+  border-radius: 9999px;
+  background-color: #8FB062;
+  border: 2px solid #FFFFFF;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
+  cursor: pointer;
+  -webkit-appearance: none;
+}
+input[type='range']::-moz-range-thumb {
+  width: 24px;
+  height: 24px;
+  border-radius: 9999px;
+  background-color: #8FB062;
+  border: 2px solid #FFFFFF;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
+  cursor: pointer;
+}
+
+/* WebKit backdrop-filter fallback for Safari */
+.backdrop-blur-md,
+.backdrop-blur-xl,
+.backdrop-blur-sm {
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+}
+
+/* Accessible focus ring style */
+:focus-visible {
+  outline: 2px solid #8FB062;
+  outline-offset: 2px;
+}
+
+/* Golf-Themed 3D Transition Animations */
+@keyframes golf-ball-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes golf-radar-sweep {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes golf-pulse-ring {
+  0% {
+    transform: scale(0.75);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(1.25);
+    opacity: 0.35;
+  }
+  100% {
+    transform: scale(1.65);
+    opacity: 0;
+  }
+}
+
+@keyframes golf-pulse-ring-delayed {
+  0% {
+    transform: scale(0.65);
+    opacity: 0.8;
+  }
+  40% {
+    transform: scale(1.1);
+    opacity: 0.4;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+.animate-golf-spin {
+  animation: golf-ball-spin 4s linear infinite;
+}
+
+.animate-golf-radar {
+  animation: golf-radar-sweep 2.4s linear infinite;
+}
+
+.animate-golf-pulse {
+  animation: golf-pulse-ring 2s cubic-bezier(0.2, 0.8, 0.2, 1) infinite;
+}
+
+.animate-golf-pulse-delayed {
+  animation: golf-pulse-ring-delayed 2s cubic-bezier(0.2, 0.8, 0.2, 1) 0.6s infinite;
+}
+
+/* WCAG 2.2 Success Criterion 2.3.3 / 2.2.2: Motion Sensitivity Compliance */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .animate-golf-spin,
+  .animate-golf-radar,
+  .animate-golf-pulse,
+  .animate-golf-pulse-delayed,
+  .animate-pulse {
+    animation: none !important;
+  }
+}
+
+/* Practice Shot Studio is restricted to desktop / wide tablet viewports with adequate screen real estate.
+   Completely removed on both mobile vertical (portrait) and mobile horizontal (landscape) orientations. */
+@media (max-width: 767px), (orientation: landscape) and (max-height: 550px), (max-height: 500px) {
+  .practice-shot-desktop-only {
+    display: none !important;
+  }
+}
+
+/* Mobile Landscape Homescreen Compact Mode */
+@media (orientation: landscape) and (max-height: 550px) {
+  #welcome-screen {
+    padding: 0.5rem 1rem !important;
+    overflow-y: auto !important;
+  }
+  #welcome-screen header {
+    padding-bottom: 0.35rem !important;
+  }
+  #welcome-screen main {
+    padding-top: 0.25rem !important;
+    padding-bottom: 0.25rem !important;
+  }
+  #welcome-screen footer {
+    padding-top: 0.25rem !important;
+  }
+}
+
+
